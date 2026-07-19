@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>Untitled</title>
+  <title>How to train your dragon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -761,6 +761,20 @@ tbody tr:hover td{background:var(--sage-l)}
   .page{max-width:100%;padding:0 0 20px}
   .doc-header{padding:20px 0 28px;margin-bottom:28px}
   .doc-header::before{display:none}
+  /* Kill every screen box-shadow — Chrome's print renderer draws these as
+     soft gray halos around rounded corners instead of clipping cleanly.
+     Borders (which are already set on every card) carry the visual weight
+     in print, so shadows are pure downside here. */
+  *{box-shadow:none!important}
+  /* Prevent these block-level elements from splitting across a page break */
+  .table-outer,.code-block,.callout,blockquote,.toggle,.img-fig,
+  .native-video,.video-embed-wrap,.media-link-card,.vid-link-card,
+  .vid-thumb-card,.bookmark-card,.gal-item,.fc-card,tr,img,
+  .doc-header,.page-footer{
+    break-inside:avoid;page-break-inside:avoid;
+  }
+  /* Avoid orphan/widow single lines stranded at a page edge */
+  p,li{orphans:3;widows:3}
   /* ── Iframes: hide in print; the .embed-frame-wrap is hidden, embed-bar link stays ── */
   .embed-block{break-inside:avoid}
   .embed-ratio-16-9,.embed-frame-wrap{display:none!important}
@@ -830,7 +844,7 @@ tbody tr:hover td{background:var(--sage-l)}
 <body>
 
 <div class="action-bar" role="toolbar" aria-label="Document actions">
-  <span class="ab-title">Untitled</span>
+  <span class="ab-title">How to train your dragon</span>
   <div class="ab-divider"></div>
   <button class="ab-btn ab-btn-ghost" onclick="window.print()" title="Print document">
     <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -851,10 +865,10 @@ tbody tr:hover td{background:var(--sage-l)}
 <main class="page">
   <div class="doc-header">
     <div class="page-eyebrow"><span class="page-eyebrow-dot"></span>Note</div>
-    <h1 class="page-title">Untitled</h1>
+    <h1 class="page-title">How to train your dragon</h1>
     <div class="page-meta">
       <span class="meta-item"><span class="meta-icon">📅</span>July 5, 2026</span>
-      <span class="meta-item"><span class="meta-icon">✏️</span>Updated July 14, 2026</span>
+      <span class="meta-item"><span class="meta-icon">✏️</span>Updated July 19, 2026</span>
       <span class="meta-item"><span class="meta-dot" style="background:#22c55e"></span>Tag-4</span><span class="meta-item"><span class="meta-dot" style="background:#ec4899"></span>tag-1</span>
     </div>
   </div>
@@ -937,11 +951,14 @@ tbody tr:hover td{background:var(--sage-l)}
 <hr class="rule">
 <h2 class="h2">✨ AI Summary</h2>
 <div class="callout"><span><b><font color="#ef4444" style="background-color: rgb(254,240,138)">Key Turn</font></b> – On the exact same day Jiraiya and Itachi die, triggering parallel spiritual rebirths of Naruto and Paper. <b>Jiraiya’s death</b> forces <i>Naruto</i> to inherit his mentor’s will, walk the path of the “next Hokage,” and embrace <u>hope, bonds, and village protection</u>. <b>Itachi’s death</b> shatters <i>Paper’s</i> worldview, delivering a version of the “truth” that pushes him toward <u>revenge, truth‑seeking, and dismantling the system</u>, leading him to leave Konoha, join Akatsuki, and launch his own revolution. This “passing of the torch” splits into two opposite directions, permanently reshaping the narrative and giving greater weight to the <u>Pain arc</u> and the subsequent <u>Paper arc</u>. Kishimoto’s subtle thematic poetry links these events as a hidden detail that elevates the whole story.</span></div>
+<hr class="rule">
+<h2 class="h2">✨ AI Summary</h2>
+<div class="callout"><span><font color="#ef4444" style="background-color: rgb(254, 240, 138)">The narrative takes a significant turn when Jiraiya and Itachi die on the same day, marking a turning point for Naruto and Paper as they spiritually reborn on the same day, with Naruto choosing <b>hope, bonds, and protecting the village</b>, while Paper chooses <b>truth, revenge, and tearing the system down</b>, and the old generation passes the torch, but it splits into two opposite directions, changing the story forever, affecting the <b>Pain arc</b> and the subsequent <b>Paper arc</b>, with key events including: <br>Jiraiya's death forcing Naruto to fully step into his own, <br>Itachi's death being the catalyst that sends Paper down his <b>darker path</b>, <br>Naruto starting to walk the path of the '<b>next Hokage</b>', <br>Paper leaving the village, joining <b>Akatsuki</b>, and embracing his <b>revolution against the system</b>, and the story was never the same after the day Jiraiya and Itachi died, with the old generation's legacy splitting into two opposite directions, and the subsequent arcs feeling heavier once you realize they happen in parallel on this fateful day.</font></span></div>
   </article>
   <div class="tags-row"><span class="tags-lbl">Tags</span><span class="tag-chip" style="background:#22c55e">Tag-4</span><span class="tag-chip" style="background:#ec4899">tag-1</span></div>
   <footer class="page-footer">
     <span class="footer-brand"><span class="footer-brand-dot"></span>Exported from Notes</span>
-    <span>July 14, 2026</span>
+    <span>July 19, 2026</span>
   </footer>
 </main>
 <script>
@@ -990,10 +1007,10 @@ window.__imagesReady=false;
 
 
 
-// ── Print / Save PDF button ───────────────────────────────────────────────────
-var pb=document.getElementById('print-btn');
-if(pb)pb.addEventListener('click',function(){window.print();});
-
+  // ── Print / Save PDF button ───────────────────────────────────────────────────
+  var pb=document.getElementById('print-btn');
+  if(pb)pb.addEventListener('click',function(){window.print();});
+  
 </script>
 </body>
 </html>
